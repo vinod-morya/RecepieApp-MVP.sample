@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
-import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepieInteractorImpl;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenter;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenterImpl;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
