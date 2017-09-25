@@ -1,7 +1,6 @@
 package com.wildnettechnologies.recepieonmvp.Recepie.Model;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,16 +11,12 @@ import java.util.List;
 
 public class RecepieModel {
 
-    @SerializedName("title")
     @Expose
     private String title;
-    @SerializedName("version")
     @Expose
     private Double version;
-    @SerializedName("href")
     @Expose
     private String href;
-    @SerializedName("results")
     @Expose
     private List<Result> results = new ArrayList<Result>() {};
 
@@ -59,16 +54,12 @@ public class RecepieModel {
 
     public static class Result {
 
-        @SerializedName("title")
         @Expose
         private String title;
-        @SerializedName("href")
         @Expose
         private String href;
-        @SerializedName("ingredients")
         @Expose
         private String ingredients;
-        @SerializedName("thumbnail")
         @Expose
         private String thumbnail;
 
