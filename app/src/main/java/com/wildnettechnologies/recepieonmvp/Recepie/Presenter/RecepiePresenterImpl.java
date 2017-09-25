@@ -1,9 +1,6 @@
 
 package com.wildnettechnologies.recepieonmvp.Recepie.Presenter;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
@@ -14,7 +11,6 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
 
     private IRecepieView IRecepieView;
     private RecepieInteractor recepieInteractor;
-    private RecyclerView mRecyclerView;
 
     public RecepiePresenterImpl(IRecepieView IRecepieView) {
         this.IRecepieView = IRecepieView;
@@ -40,9 +36,6 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
 
     @Override
     public void onRecepieReady(List<RecepieModel.Result> items, int pageNumber) {
-        if (pageNumber == 1) {
-//            loading = false;
-        }
         if (IRecepieView != null) {
             IRecepieView.setItems(items, pageNumber);
             IRecepieView.hideProgress();
