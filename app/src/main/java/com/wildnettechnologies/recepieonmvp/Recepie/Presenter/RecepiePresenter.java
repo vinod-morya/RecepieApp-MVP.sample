@@ -1,7 +1,5 @@
 package com.wildnettechnologies.recepieonmvp.Recepie.Presenter;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 
