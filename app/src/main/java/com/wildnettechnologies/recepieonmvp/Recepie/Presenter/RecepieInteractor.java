@@ -5,11 +5,13 @@ import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 
 import java.util.List;
 
-public interface RecepieInteractor {
+public interface RecepieInteractor
+  {
 
-    void getRecepies(OnFinishedListener listener, RecepieRequestModel model);
+	 void getRecepies(OnFinishedListener listener, RecepieRequestModel model);
 
-    interface OnFinishedListener {
-        void onRecepieReady(List<RecepieModel.Result> items, int pageNumber);
-    }
-}
+	 interface OnFinishedListener
+		{
+		  void onRecepieReady(List<RecepieModel.Result> items, int pageNumber);
+		}
+  }
