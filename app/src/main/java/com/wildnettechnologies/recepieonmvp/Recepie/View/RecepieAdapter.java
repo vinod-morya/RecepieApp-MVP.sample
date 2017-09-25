@@ -63,7 +63,6 @@ public class RecepieAdapter extends RecyclerView.Adapter<RecepieAdapter.Recepies
         @BindView(R.id.cardViewRecepieItem)
         CardView cardViewRecepieItem;
 
-
         RecepiesViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

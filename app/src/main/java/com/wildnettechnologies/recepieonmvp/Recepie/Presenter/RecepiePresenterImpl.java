@@ -14,30 +14,22 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
 
     private IRecepieView IRecepieView;
     private RecepieInteractor recepieInteractor;
-    private SearchView mSearchView;
     private RecyclerView mRecyclerView;
 
-    public RecepiePresenterImpl(IRecepieView IRecepieView,RecepieInteractor recepieInteractor) {
+    public RecepiePresenterImpl(IRecepieView IRecepieView) {
         this.IRecepieView = IRecepieView;
-        this.recepieInteractor = recepieInteractor;
-        this.mRecyclerView = mRecyclerView;
+        this.recepieInteractor = new RecepieInteractorImpl();
     }
 
     @Override
     public void onResume() {
         if (IRecepieView != null) {
-
         }
     }
 
     @Override
     public void onDestroy() {
         IRecepieView = null;
-    }
-
-    @Override
-    public void onMenuLoaded(SearchView mSearchView) {
-        this.mSearchView = mSearchView;
     }
 
     @Override

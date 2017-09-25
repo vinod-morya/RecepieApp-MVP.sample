@@ -21,6 +21,7 @@ import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepieInteractorImpl;
+import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenter;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenterImpl;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
@@ -45,12 +46,11 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
     RecyclerView mRecyclerViewRecepie;
     @BindView(R.id.progressbarRecepie)
     ProgressBar mProgressbarRecepie;
-    private RecepiePresenterImpl mRecepiePresenterImpl;
     private RecepieAdapter mRecepieAdapter;
     private ArrayList<RecepieModel.Result> mRecepieModel = new ArrayList<>();
     private SearchView mSearchView;
+    private RecepiePresenter mRecepiePresenter;
     private RecepieRequestModel mRecepieRequestModel;
-    private boolean loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +66,14 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
         mRecepieAdapter = new RecepieAdapter(this, mRecepieModel);
         mRecyclerViewRecepie.setAdapter(mRecepieAdapter);
 //        initLoadMoreFeature();
-        mRecepiePresenterImpl = new RecepiePresenterImpl(this, new RecepieInteractorImpl());
+         mRecepiePresenter = new RecepiePresenterImpl(this);
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mRecepiePresenterImpl.onResume();
+        mRecepiePresenter.onResume();
     }
 
 
@@ -85,7 +85,6 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
         mSearchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        mRecepiePresenterImpl.onMenuLoaded(mSearchView);
         initSearch();
         return true;
     }
@@ -102,7 +101,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
 
     @Override
     protected void onDestroy() {
-        mRecepiePresenterImpl.onDestroy();
+        mRecepiePresenter.onDestroy();
         super.onDestroy();
     }
 
@@ -185,7 +184,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
                         mRecepieRequestModel = new RecepieRequestModel();
                         mRecepieRequestModel.setRecepie(query);
                         mRecepieRequestModel.setPage(1);
-                        mRecepiePresenterImpl.onSearchStarted(mRecepieRequestModel);
+                        mRecepiePresenter.onSearchStarted(mRecepieRequestModel);
                     }
                     return false;
                 }
@@ -203,7 +202,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
                                         mRecepieRequestModel = new RecepieRequestModel();
                                         mRecepieRequestModel.setRecepie(newText);
                                         mRecepieRequestModel.setPage(1);
-                                        mRecepiePresenterImpl.onSearchStarted(mRecepieRequestModel);
+                                        mRecepiePresenter.onSearchStarted(mRecepieRequestModel);
                                     }
                                 },
                                 DELAY

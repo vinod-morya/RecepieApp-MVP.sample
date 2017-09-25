@@ -11,7 +11,5 @@ public interface RecepiePresenter {
 
     void onDestroy();
 
-    void onMenuLoaded(SearchView mSearchView);
-
     void onSearchStarted(RecepieRequestModel mRecepieRequestModel);
 }
