@@ -1,4 +1,4 @@
-package com.wildnettechnologies.recepieonmvp.ui;
+package com.wildnettechnologies.recepieonmvp.Recepie;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -20,9 +20,9 @@ import android.widget.Toast;
 import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
-import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiesInteractorImpl;
+import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepieInteractorImpl;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenterImpl;
-import com.wildnettechnologies.recepieonmvp.Recepie.View.AdapterRecepie;
+import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
 import com.wildnettechnologies.recepieonmvp.base.Constants.AppConstants;
 
@@ -46,7 +46,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
     @BindView(R.id.progressbarRecepie)
     ProgressBar mProgressbarRecepie;
     private RecepiePresenterImpl mRecepiePresenterImpl;
-    private AdapterRecepie mAdapterRecepie;
+    private RecepieAdapter mRecepieAdapter;
     private ArrayList<RecepieModel.Result> mRecepieModel = new ArrayList<>();
     private SearchView mSearchView;
     private RecepieRequestModel mRecepieRequestModel;
@@ -63,10 +63,10 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
     private void initializeViews() {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerViewRecepie.setLayoutManager(layoutManager);
-        mAdapterRecepie = new AdapterRecepie(this, mRecepieModel);
-        mRecyclerViewRecepie.setAdapter(mAdapterRecepie);
+        mRecepieAdapter = new RecepieAdapter(this, mRecepieModel);
+        mRecyclerViewRecepie.setAdapter(mRecepieAdapter);
 //        initLoadMoreFeature();
-        mRecepiePresenterImpl = new RecepiePresenterImpl(this, new RecepiesInteractorImpl());
+        mRecepiePresenterImpl = new RecepiePresenterImpl(this, new RecepieInteractorImpl());
 
     }
 

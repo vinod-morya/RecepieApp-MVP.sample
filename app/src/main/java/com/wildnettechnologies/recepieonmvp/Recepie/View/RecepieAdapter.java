@@ -7,11 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.GlideBuilder;
 import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 
@@ -21,11 +19,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AdapterRecepie extends RecyclerView.Adapter<AdapterRecepie.RecepiesViewHolder> {
+public class RecepieAdapter extends RecyclerView.Adapter<RecepieAdapter.RecepiesViewHolder> {
     private final Activity mActivity;
     private List<RecepieModel.Result> mRecepieModelResult = new ArrayList<>();
 
-    public AdapterRecepie(Activity activity, List<RecepieModel.Result> mRecepieModelResult) {
+    public RecepieAdapter(Activity activity, List<RecepieModel.Result> mRecepieModelResult) {
         this.mRecepieModelResult = mRecepieModelResult;
         mActivity = activity;
     }

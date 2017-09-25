@@ -10,9 +10,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RecepiesInteractorImpl implements RecepieInteractor {
+public class RecepieInteractorImpl implements RecepieInteractor {
 
-    public RecepiesInteractorImpl() {
+    public RecepieInteractorImpl() {
     }
 
     public void getRecepies(final OnFinishedListener finishedListener, final RecepieRequestModel model) {
