@@ -13,7 +13,6 @@ import retrofit2.http.POST;
  */
 public interface ApiInterface
   {
-
 	 @FormUrlEncoded
 	 @POST(AppConstants.PUPPY_API)
 	 Call<RecepieModel> getSearchedRecepies(@Field("i") String ingredients, @Field("q") String query, @Field("p") int page);
