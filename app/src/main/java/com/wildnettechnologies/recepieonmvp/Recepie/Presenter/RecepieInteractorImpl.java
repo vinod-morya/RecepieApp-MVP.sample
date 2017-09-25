@@ -16,6 +16,7 @@ public class RecepieInteractorImpl implements RecepieInteractor {
     }
 
     public void getRecepies(final OnFinishedListener finishedListener, final RecepieRequestModel model) {
+
         ApiFactory.getRecepieClient().getSearchedRecepies(model.getIngredients(), model.getRecepie(), model.getPage())
                 .enqueue(new Callback<RecepieModel>() {
                     @Override
@@ -24,7 +25,7 @@ public class RecepieInteractorImpl implements RecepieInteractor {
                         if (result != null)
                             finishedListener.onRecepieReady(result.getResults(), model.getPage());
                         else{
-                            // Mocking a webservice
+                            // Mocking a webservice on app.
                             ArrayList<RecepieModel.Result> recepies = new ArrayList<>();
                             for (int i = 0; i < 11; i++) {
                                 RecepieModel.Result recepie = new RecepieModel.Result(("Recepie number : " + i), "", ("Recepie ingridients : " + i), "http://via.placeholder.com/150x150");
