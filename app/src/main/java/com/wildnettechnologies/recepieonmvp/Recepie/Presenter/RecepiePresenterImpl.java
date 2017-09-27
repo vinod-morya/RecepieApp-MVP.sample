@@ -18,17 +18,6 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
     }
 
     @Override
-    public void onResume() {
-        if (IRecepieView != null) {
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        IRecepieView = null;
-    }
-
-    @Override
     public void onSearchStarted(RecepieRequestModel mRecepieRequestModel) {
         IRecepieView.showProgress();
         recepieInteractor.getRecepies(this, mRecepieRequestModel);
@@ -43,9 +32,9 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
         }
     }
 
-    public IRecepieView getIRecepieView() {
-        return IRecepieView;
-    }
-
-
+    @Override
+    public void onRecepieFailed(String errorMessage)
+        {
+            IRecepieView.hideProgress();
+        }
 }

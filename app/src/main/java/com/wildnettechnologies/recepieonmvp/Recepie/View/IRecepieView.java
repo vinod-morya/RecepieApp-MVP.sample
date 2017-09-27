@@ -12,11 +12,6 @@ public interface IRecepieView {
 
     void hideDefaultText();
 
-    void showDefaultText();
-
     void setItems(List<RecepieModel.Result> items, int pageNumber);
 
-    void showMessage(String message);
-
-    void startSearchText(String sreachText);
 }

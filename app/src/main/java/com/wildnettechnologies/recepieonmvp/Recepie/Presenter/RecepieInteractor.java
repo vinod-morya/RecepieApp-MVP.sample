@@ -13,5 +13,6 @@ public interface RecepieInteractor
 	 interface OnFinishedListener
 		{
 		  void onRecepieReady(List<RecepieModel.Result> items, int pageNumber);
+		  void onRecepieFailed(String errorMessage);
 		}
   }

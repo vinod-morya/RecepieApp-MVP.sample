@@ -15,15 +15,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenter;
 import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenterImpl;
-import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
+import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
 import com.wildnettechnologies.recepieonmvp.base.Constants.AppConstants;
 
 import java.util.ArrayList;
@@ -64,17 +63,9 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
         mRecyclerViewRecepie.setLayoutManager(layoutManager);
         mRecepieAdapter = new RecepieAdapter(this, mRecepieModel);
         mRecyclerViewRecepie.setAdapter(mRecepieAdapter);
-//        initLoadMoreFeature();
-         mRecepiePresenter = new RecepiePresenterImpl(this);
+        mRecepiePresenter = new RecepiePresenterImpl(this);
 
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mRecepiePresenter.onResume();
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -98,11 +89,6 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        mRecepiePresenter.onDestroy();
-        super.onDestroy();
-    }
 
     @Override
     public void showProgress() {
@@ -127,47 +113,12 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
     }
 
     @Override
-    public void showDefaultText() {
-        mTvWelcomeText.setVisibility(View.VISIBLE);
-    }
-
-    @Override
     public void setItems(List<RecepieModel.Result> items, int pageNumber) {
         if (pageNumber == AppConstants.DEFAULT_PAGE) {
             mRecepieModel.clear();
         }
         mRecepieModel.addAll(items);
     }
-
-    @Override
-    public void showMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void startSearchText(String sreachText) {
-
-    }
-
-
-//    private void initLoadMoreFeature() {
-//        mRecyclerViewRecepie.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            public int visibleThreshold = 7;
-//
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//
-//                int totalItemCount = mRecyclerViewRecepie.getLayoutManager().getItemCount();
-//                int lastVisibleItem = ((LinearLayoutManager) mRecyclerViewRecepie.getLayoutManager()).findLastVisibleItemPosition();
-//                if (!loading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
-//                    mRecepieRequestModel.setPage(mRecepieRequestModel.getPage() + 1);
-//                    mRecepiePresenterImpl.onSearchStarted(mRecepieRequestModel);
-//                    loading = true;
-//                }
-//            }
-//        });
-//    }
 
     private void initSearch() {
         if (mSearchView != null) {
