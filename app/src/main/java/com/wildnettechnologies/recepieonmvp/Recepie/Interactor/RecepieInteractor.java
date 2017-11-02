@@ -1,4 +1,4 @@
-package com.wildnettechnologies.recepieonmvp.Recepie.Presenter;
+package com.wildnettechnologies.recepieonmvp.Recepie.Interactor;
 
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;

@@ -182,6 +182,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
         switch (view.getId()) {
             case R.id.tvWelcomeText:
                 Log.e("welcome Text Clicked", "Welcome clicked");
+                mRecepiePresenter.onWelcomeClicked();
                 break;
             case R.id.recyclerViewRecepie:
                 break;

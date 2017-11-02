@@ -6,4 +6,6 @@ import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
 public interface RecepiePresenter {
 
     void onSearchStarted(RecepieRequestModel mRecepieRequestModel);
+
+    void onWelcomeClicked();
 }
