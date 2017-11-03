@@ -39,6 +39,13 @@ public class RecepiePresenterImpl implements RecepieContracts.RecepiePresenter, 
 		}
 
 	 @Override
+	 public void onDestroy()
+		{
+		  mRecepieRouter.onDestroy();
+		  IRecepieView = null;
+		}
+
+	 @Override
 	 public void onRecepieReady(List<RecepieModel.Result> items, int pageNumber)
 		{
 		  if(IRecepieView != null)

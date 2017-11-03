@@ -33,4 +33,10 @@ public class RecepieRouterImpl implements RecepieContracts.RecepieRouter
 		  intent.putExtras(bundle);
 		  mRecepieActivity.startActivity(intent);
 		}
+
+	 @Override
+	 public void onDestroy()
+		{
+		  mRecepieActivity = null;
+		}
   }

@@ -12,6 +12,8 @@ interface RecepieContracts
 		  void showNextActivity();
 
 		  void navigateTorecepieDetailModule(RecepieModel.Result result);
+
+		  void onDestroy();
 		}
 
 	 interface RecepiePresenter
@@ -21,6 +23,8 @@ interface RecepieContracts
 		  void onWelcomeClicked();
 
 		  void navigateToRowDetailModule(RecepieModel.Result result);
+
+		  void onDestroy();
 		}
 
 	 interface RecepieInteractor

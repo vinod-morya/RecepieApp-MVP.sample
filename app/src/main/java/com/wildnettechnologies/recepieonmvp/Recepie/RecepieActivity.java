@@ -195,4 +195,11 @@ public class RecepieActivity extends AppCompatActivity implements RecepieContrac
               mRecepiePresenter.navigateToRowDetailModule(result);
           }
         }
+
+    @Override
+    protected void onDestroy()
+        {
+            super.onDestroy();
+            mRecepiePresenter.onDestroy();
+        }
 }
