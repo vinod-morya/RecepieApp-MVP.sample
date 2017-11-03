@@ -118,6 +118,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView, 
             mRecepieModel.clear();
         }
         mRecepieModel.addAll(items);
+        mRecepieAdapter.notifyDataSetChanged();
     }
 
     private void initSearch() {
