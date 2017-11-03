@@ -1,4 +1,4 @@
-package com.wildnettechnologies.recepieonmvp.Recepie.Interactor;
+package com.wildnettechnologies.recepieonmvp.Recepie;
 
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
@@ -10,7 +10,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RecepieInteractorImpl implements RecepieInteractor {
+public class RecepieInteractorImpl implements RecepieContracts.RecepieInteractor {
 
     public RecepieInteractorImpl() {
     }

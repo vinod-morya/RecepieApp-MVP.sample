@@ -1,24 +1,18 @@
-package com.wildnettechnologies.recepieonmvp.Recepie.Presenter;
+package com.wildnettechnologies.recepieonmvp.Recepie;
 
-import com.wildnettechnologies.recepieonmvp.Recepie.Interactor.RecepieInteractor;
-import com.wildnettechnologies.recepieonmvp.Recepie.Interactor.RecepieInteractorImpl;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
-import com.wildnettechnologies.recepieonmvp.Recepie.RecepieActivity;
-import com.wildnettechnologies.recepieonmvp.Recepie.Router.RecepieRouter;
-import com.wildnettechnologies.recepieonmvp.Recepie.Router.RecepieRouterImpl;
-import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
 
 import java.util.List;
 
-public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor.OnFinishedListener
+public class RecepiePresenterImpl implements RecepieContracts.RecepiePresenter, RecepieContracts.RecepieInteractor.OnFinishedListener
   {
 
-	 private IRecepieView IRecepieView;
-	 private RecepieInteractor recepieInteractor;
-	 private RecepieRouter mRecepieRouter;
+	 private RecepieContracts.IRecepieView IRecepieView;
+	 private RecepieContracts.RecepieInteractor recepieInteractor;
+	 private RecepieContracts.RecepieRouter mRecepieRouter;
 
-	 public RecepiePresenterImpl(IRecepieView IRecepieView)
+	 public RecepiePresenterImpl(RecepieContracts.IRecepieView IRecepieView)
 		{
 		  this.IRecepieView = IRecepieView;
 		  this.recepieInteractor = new RecepieInteractorImpl();

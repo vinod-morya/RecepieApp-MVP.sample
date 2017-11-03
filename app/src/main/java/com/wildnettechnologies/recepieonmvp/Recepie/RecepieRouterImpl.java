@@ -1,14 +1,13 @@
-package com.wildnettechnologies.recepieonmvp.Recepie.Router;
+package com.wildnettechnologies.recepieonmvp.Recepie;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
-import com.wildnettechnologies.recepieonmvp.Recepie.RecepieActivity;
 import com.wildnettechnologies.recepieonmvp.RecepieDetail.RecepieDetailActivity;
 import com.wildnettechnologies.recepieonmvp.base.Constants.AppConstants;
 
-public class RecepieRouterImpl implements RecepieRouter
+public class RecepieRouterImpl implements RecepieContracts.RecepieRouter
   {
 
 	 RecepieActivity mRecepieActivity;
