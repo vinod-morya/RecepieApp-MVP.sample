@@ -16,7 +16,6 @@ interface RecepieContracts
 
 	 interface RecepiePresenter
 		{
-
 		  void onSearchStarted(RecepieRequestModel mRecepieRequestModel);
 
 		  void onWelcomeClicked();

@@ -19,9 +19,6 @@ import android.widget.TextView;
 import com.wildnettechnologies.recepieonmvp.R;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieModel;
 import com.wildnettechnologies.recepieonmvp.Recepie.Model.RecepieRequestModel;
-import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenter;
-import com.wildnettechnologies.recepieonmvp.Recepie.Presenter.RecepiePresenterImpl;
-import com.wildnettechnologies.recepieonmvp.Recepie.View.IRecepieView;
 import com.wildnettechnologies.recepieonmvp.Recepie.View.RecepieAdapter;
 import com.wildnettechnologies.recepieonmvp.base.Constants.AppConstants;
 
@@ -35,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class RecepieActivity extends AppCompatActivity implements IRecepieView, RecepieAdapter.RecyclerViewClickListener {
+public class RecepieActivity extends AppCompatActivity implements RecepieContracts.IRecepieView, RecepieAdapter.RecyclerViewClickListener {
 
 
     @BindView(R.id.tvWelcomeText)
@@ -47,7 +44,7 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView, 
     private RecepieAdapter mRecepieAdapter;
     private ArrayList<RecepieModel.Result> mRecepieModel = new ArrayList<>();
     private SearchView mSearchView;
-    private RecepiePresenter mRecepiePresenter;
+    private RecepieContracts.RecepiePresenter mRecepiePresenter;
     private RecepieRequestModel mRecepieRequestModel;
 
     @Override
