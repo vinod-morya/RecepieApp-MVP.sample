@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.wildnettechnologies.recepieonmvp.Recepie.RecepieActivity">
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+	  xmlns:app = "http://schemas.android.com/apk/res-auto"
+	  xmlns:tools = "http://schemas.android.com/tools"
+	  android:layout_width = "match_parent"
+	  android:layout_height = "match_parent"
+	  tools:context = "com.wildnettechnologies.recepieonmvp.Recepie.RecepieActivity" >
+  
+  <TextView
+		 android:id = "@+id/tvWelcomeText"
+		 android:layout_width = "wrap_content"
+		 android:layout_height = "wrap_content"
+		 android:layout_centerInParent = "true"
+		 android:text = "You are on Recepie detail activity" />
+  
+  <RelativeLayout
+		 android:layout_width = "match_parent"
+		 android:layout_height = "wrap_content"
+		 android:layout_margin = "@dimen/_15sdp" >
+	 
+	 <TextView
+			android:id = "@+id/tvTitle"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content" />
+	 
+	 <TextView
+			android:id = "@+id/tvHref"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:layout_below = "@id/tvTitle"
+			android:layout_marginBottom = "@dimen/_15sdp"
+			android:layout_marginTop = "@dimen/_15sdp" />
+	 
+	 <TextView
+			android:id = "@+id/tvIngredients"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:layout_below = "@id/tvHref" />
+  
+  </RelativeLayout >
 
-    <TextView
-        android:id="@+id/tvWelcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="You are on Recepie detail activity" />
-
-</RelativeLayout>
+</RelativeLayout >

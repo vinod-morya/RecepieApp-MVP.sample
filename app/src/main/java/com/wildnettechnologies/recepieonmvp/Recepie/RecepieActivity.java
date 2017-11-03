@@ -191,10 +191,11 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView, 
     }
 
     @Override
-    public void onCellClick(RecepieModel.Result tag)
+    public void onCellClick(RecepieModel.Result result)
         {
-          if(tag == null){
+          if(result != null){
               Log.e("Click data","Click data is null.");
+              mRecepiePresenter.navigateToRowDetailModule(result);
           }
         }
 }

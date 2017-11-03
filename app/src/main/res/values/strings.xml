@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RecepieOnMVP</string>
     <string name="search_for_recepies_to_load_data">Search for recepies to load data.</string>
+  <string name = "title" >Title :</string >
+  <string name = "href" >Href :</string >
+  <string name = "ingredients" >Ingredients :</string >
 </resources>

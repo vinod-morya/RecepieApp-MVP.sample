@@ -39,6 +39,12 @@ public class RecepiePresenterImpl implements RecepiePresenter, RecepieInteractor
 		}
 
 	 @Override
+	 public void navigateToRowDetailModule(RecepieModel.Result result)
+		{
+		  mRecepieRouter.navigateTorecepieDetailModule(result);
+		}
+
+	 @Override
 	 public void onRecepieReady(List<RecepieModel.Result> items, int pageNumber)
 		{
 		  if(IRecepieView != null)
