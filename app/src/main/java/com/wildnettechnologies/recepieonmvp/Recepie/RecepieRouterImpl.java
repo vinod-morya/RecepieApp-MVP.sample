@@ -20,8 +20,8 @@ public class RecepieRouterImpl implements RecepieContracts.RecepieRouter
 	 @Override
 	 public void showNextActivity()
 		{
-//		  Intent intent = new Intent(mRecepieActivity, RecepieDetailActivity.class);
-//		  mRecepieActivity.startActivity(intent);
+		  Intent intent = new Intent(mRecepieActivity, RecepieDetailActivity.class);
+		  mRecepieActivity.startActivity(intent);
 		}
 
 	 @Override
