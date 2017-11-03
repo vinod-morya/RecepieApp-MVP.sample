@@ -115,6 +115,7 @@ public class RecepieActivity extends AppCompatActivity implements RecepieContrac
             mRecepieModel.clear();
         }
         mRecepieModel.addAll(items);
+        mRecepieAdapter.notifyDataSetChanged();
     }
 
     private void initSearch() {
