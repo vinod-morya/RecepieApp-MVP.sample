@@ -8,6 +8,6 @@ android.
  1.master ------------------------ MVP.\
  2.viper ------------------------- basic Viper design pattern.\
  3.vipersimplified --------------- Simplified version of viper design pattern.\
- hello
+ 
  
 To understand this project please follow the tutorial on http://www.vinodmorya.com/blogs/android-architecture-mvp/
