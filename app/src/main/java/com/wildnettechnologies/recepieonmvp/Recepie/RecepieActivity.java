@@ -35,7 +35,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class RecepieActivity extends AppCompatActivity implements IRecepieView {
+public class RecepieActivity extends AppCompatActivity implements IRecepieView, RecepieAdapter.RecyclerViewClickListener {
 
 
     @BindView(R.id.tvWelcomeText)
@@ -157,7 +157,6 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
                                 },
                                 DELAY
                         );
-
                     }
                     return false;
                 }
@@ -190,4 +189,12 @@ public class RecepieActivity extends AppCompatActivity implements IRecepieView {
                 break;
         }
     }
+
+    @Override
+    public void onCellClick(RecepieModel.Result tag)
+        {
+          if(tag == null){
+              Log.e("Click data","Click data is null.");
+          }
+        }
 }
