@@ -1,4 +1,4 @@
-# RecepieApp-MVP.sample
+# VIPER,SimpliFied Viper and MVPsample
 
 
 This is a sample Android app build to provide the understanding of various design patterns in 
